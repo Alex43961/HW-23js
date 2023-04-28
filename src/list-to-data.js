@@ -11,6 +11,8 @@ for (let i = 0; i < arr.length; i++) {
 		name: results[1],
 		salary: results[2],
 		pets: results[3],
+		isActive: true,
+		reasonOfExit: []
 	};
 	dataList.push(worker);
 

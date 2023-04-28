@@ -1,23 +1,48 @@
 'use strict'
 
+
 const randomInteger = (min, max) => {
 	let random = min + Math.random() * (max - min);
 	return Math.floor(random);
 };
 
-export const randomDismissed = function (arr) {
-	let unluckyWorkers = [];
-
-
-
+export const randomDismissed = function (workersList) {
+	
 	let min = 0;
-	let max = arr.length - 1;
+	let max = workersList.length - 1;
 	for (let i = 0; i < 3; i++) {
-
 		let n = randomInteger(min, max);
 		console.log(n);
-		unluckyWorkers.push(arr[n]);
-	}
-	return unluckyWorkers;
+		workersList[n].isActive = false;
+		workersList[n].reasonOfExit.push("because of random");		
+	}	
 }
+
+export const currencySalary = function (workersList) {
+	
+
+	workersList.forEach(function (worker) {
+		if (worker.salary.match(/\d+€/) || worker.salary.match(/\d+£/)) {
+			worker.isActive = false;
+			worker.reasonOfExit.push('because of currency');
+		}
+	});
+	
+}
+
+export const haveAHamster = function (workersList) {
+	workersList.forEach(function (worker) {
+		if (worker.pets.includes("hamster")) {
+			worker.isActive = false;
+			worker.reasonOfExit.push('because of hamster');
+		}
+	});	
+}
+
+
+
+
+
+
+
 
