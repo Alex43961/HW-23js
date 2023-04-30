@@ -12,7 +12,7 @@ for (let i = 0; i < arr.length; i++) {
 		salary: results[2],
 		pets: results[3],
 		isActive: true,
-		reasonOfExit: []
+		//reasonOfExit: []
 	};
 	dataList.push(worker);
 

@@ -14,7 +14,7 @@ export const randomDismissed = function (workersList) {
 		let n = randomInteger(min, max);
 		console.log(n);
 		workersList[n].isActive = false;
-		workersList[n].reasonOfExit.push("because of random");		
+		workersList[n].reasonOfExit = ["random"];		
 	}	
 }
 
@@ -24,7 +24,7 @@ export const currencySalary = function (workersList) {
 	workersList.forEach(function (worker) {
 		if (worker.salary.match(/\d+€/) || worker.salary.match(/\d+£/)) {
 			worker.isActive = false;
-			worker.reasonOfExit.push('because of currency');
+			worker.reasonOfExit = ['currency'];
 		}
 	});
 	
@@ -34,7 +34,7 @@ export const haveAHamster = function (workersList) {
 	workersList.forEach(function (worker) {
 		if (worker.pets.includes("hamster")) {
 			worker.isActive = false;
-			worker.reasonOfExit.push('because of hamster');
+			worker.reasonOfExit =['hamster'];
 		}
 	});	
 }

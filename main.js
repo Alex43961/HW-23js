@@ -4,7 +4,7 @@ import { list } from "./src/list.js";
 import {workerList} from "./src/list-to-data.js";
 import { randomDismissed, currencySalary, haveAHamster } from "./src/black-list.js";
 import { isDismissed } from "./src/dismiss.js";
-import { drawer } from "./src/draw.js";
+import { drawer, listOfEmployers } from "./src/draw.js";
 
 workerList(list);
 const employeesList = workerList(list);
@@ -22,7 +22,9 @@ console.log("[haveAHamster]", employeesList);
 
 console.log('[isDismissed]', isDismissed(employeesList));
 
-drawer(employeesList)
+drawer(employeesList);
+console.log("[listOfEmployers]", listOfEmployers(employeesList)); 
+
 
 
 
